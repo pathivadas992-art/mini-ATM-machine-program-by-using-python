@@ -1,0 +1,48 @@
+balance=1000
+pin=4011
+while (balance>0):
+    print("***** WELCOME TO MINI ATM *****")
+    print("1. CHECK BALANCE")
+    print("2. DEPOSITE AMOUNT")
+    print("3. WITHDRAW AMOUNT")
+    print("4. EXIT")
+    print("....................")
+    choice=input("ENTER YOUR OPTION NUMBER: ")
+    if (choice not in("1","2","3","4")):
+        print("YOU ENTERD INVALID OPTION")
+    elif (choice=="1"):
+        pin1=int(input("ENTER YOUR PIN: "))
+        if pin==pin1:
+            print("YOUR BALANCE IS :₹",balance)
+        else:
+            print("YOU ENTERED INVALID PIN")
+    elif (choice=="2"):
+        print("***** WELCOME TO DEPOSITE SECTION *****")
+        pin1=int(input("ENTER YOUR PIN: "))
+        if (pin==pin1):
+            deposite_amount=int(input("ENTER YOUR DEPOSITE AMOUNT:₹ "))
+            if (deposite_amount<=0):
+                print("INVALID INPUT")
+
+            else:
+                print("SUCCSESSFULLY AMOUNT IS ADDED TO YOUR BALANCE")
+                print("YOUR CURRENT BALANCE IS:₹",balance+deposite_amount)
+                balance=balance+deposite_amount
+        else:
+            print("YOU ENTERED INVALID PIN")
+    elif (choice=="3"):
+        print("***** WELCOME TO WITHDRAW SECTION *****")
+        pin1=int(input("ENETR YOU PIN: "))
+        if pin==pin1:
+            withdraw_amount=int(input("ENTER YOUR WITHDRAW AMOUNT:₹ "))
+            if (withdraw_amount<=0 or withdraw_amount>balance):
+                print("INVALID INPUT")
+            else:
+                print("SUCCSESSFULLY AMOUNT IS WITHDRAW FROM BALANCE")
+                print("YOUR CURRENT BALANCE IS: ₹",balance-withdraw_amount)
+                balance=balance-withdraw_amount
+        else:
+            print("YOU ENTERED INVALID PIN")
+    else:
+        print("YOUR EXITED")
+        break
