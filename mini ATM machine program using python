@@ -1,6 +1,6 @@
 balance=1000
 pin=4011
-while (balance>0):
+while True:
     print("***** WELCOME TO MINI ATM *****")
     print("1. CHECK BALANCE")
     print("2. DEPOSITE AMOUNT")
